@@ -1,0 +1,209 @@
+[8:42 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+time = -5 : 1: 5;
+impulse = [zeros(1, 5) 1 zeros(1, 5)];
+impulse1 = [zeros(1, 6) 1 zeros(1, 4)];
+impulse2 = [zeros(1, 7) 1 zeros(1, 3)];
+impulse3 = [zeros(1, 8) 1 zeros(1, 2)];
+ 
+h1 = [1 3 2 1];
+h2 = [1 1 2];
+input = impulse + 4*impulse1 + 3*impulse2 + 2*impulse3;
+ 
+output1 = conv(input, h1);
+output2 = conv(output1, h2);
+ 
+figure(1);
+subplot(3, 1, 1);
+stem(input);
+title('Discrete Filter Input x[n]'); 
+xlabel('index, n');
+ylabel('Value, x[n]');
+ 
+subplot(3,1,2);
+stem(output1, 'k');
+title('Discrete Filter Output y1[n]');
+xlabel('index, n');
+ylabel('Value, y2[n]');
+ 
+subplot(3,1,3);
+stem(output2, 'r');
+title('Discrete Filter Output y2[n]');
+xlabel('index, n');
+ylabel('Value, y2[n]');
+[8:42 am, 17/05/2024] Jamal Khan: task9
+[8:42 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+sig1 = [3 1 1];
+sig2 = [4 2 1];
+sig3 = [3 2 1 2 3];
+ 
+lhs = conv(conv(sig1, sig2), sig3)
+rhs =  conv(sig1, conv(sig2, sig3))
+ 
+figure(1);
+subplot(2, 1, 1);
+stem(lhs);
+title('(x1[n]*x2[n])*x3[n]'); 
+xlabel('index, n');
+ylabel('Value, left hand side');
+ 
+subplot(2,1,2);
+stem(rhs, 'r');
+title('x1[n]*(x2[n]*x3[n])');
+xlabel('index, n');
+ylabel('Value, right hand side');
+[8:42 am, 17/05/2024] Jamal Khan: task6 lab8
+[8:42 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+impulseResponse = [1 1 2];
+inputSig = [1 3 2 1];
+ 
+lhs = conv(inputSig, impulseResponse)
+rhs = conv(impulseResponse, inputSig)
+ 
+figure(1);
+subplot(2, 1, 1);
+stem(lhs);
+title('h[n]*x[n]'); 
+xlabel('index, n');
+ylabel('Value, left hand side');
+ 
+subplot(2,1,2);
+stem(rhs, 'r');
+title('x[n]*h[n]');
+xlabel('index, n');
+ylabel('Value, right hand side');
+[8:42 am, 17/05/2024] Jamal Khan: task7
+[8:42 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+time = -5 : 1: 5;
+impulse = [zeros(1, 5) 1 zeros(1, 5)];
+impulse1 = [zeros(1, 6) 1 zeros(1, 4)];
+impulse2 = [zeros(1, 7) 1 zeros(1, 3)];
+impulse3 = [zeros(1, 8) 1 zeros(1, 2)];
+impulse4 = [zeros(1, 9) 1 zeros(1, 1)];
+ 
+impulseResponse = 2 * impulse + impulse1 + 2 * impulse2 + 4 * impulse3 + 3 * impulse4;
+inputSig = impulse + 4 * impulse1 + 3 * impulse2 + 2 * impulse3;
+ 
+outputSig = conv(impulseResponse, inputSig);
+ 
+figure(1);
+subplot(3, 1, 1);
+stem(time, inputSig, 'g');
+title('Discrete Filter Input x[n]'); 
+xlabel('index, n');
+ylabel('Value, x[n]');
+ 
+subplot(3,1,2);
+stem(time, impulseResponse, 'r');
+title('Discrete impulse response h[n]');
+xlabel('index, n');
+ylabel('Value, h[n]');
+ 
+subplot(3,1,3);
+stem(outputSig, 'm');
+title('Discrete Filter Output y[n]');
+xlabel('index, n');
+ylabel('Value, y[n]');
+[8:42 am, 17/05/2024] Jamal Khan: task8
+[8:42 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+time = -5 : 1: 5;
+impulse = [zeros(1, 5) 1 zeros(1, 5)];
+impulse1 = [zeros(1, 6) 1 zeros(1, 4)];
+impulse2 = [zeros(1, 7) 1 zeros(1, 3)];
+impulse3 = [zeros(1, 8) 1 zeros(1, 2)];
+impulse4 = [zeros(1, 9) 1 zeros(1, 1)];
+sig1= 2*impulse - 3*impulse1 + 3*impulse2 + 4*impulse3 - 2*impulse4; 
+sig2= 4*impulse + 2*impulse1 + 3*impulse2 - impulse3 - 2*impulse4; 
+sig3= 3*impulse + 5*impulse1 - 3*impulse2 + 4*impulse3;
+lhs = conv(conv(sig1, sig2), sig3)
+rhs =  conv(sig1, conv(sig2, sig3))
+figure(1);
+subplot(2, 1, 1);
+stem(lhs);
+title('(x1[n]*x2[n])*x3[n]'); 
+xlabel('index, n');
+ylabel('Value, left hand side');
+subplot(2,1,2);
+stem(rhs, 'r');
+title('x1[n]*(x2[n]*x3[n])');
+xlabel('index, n');
+ylabel('Value, right hand side');
+[8:42 am, 17/05/2024] Jamal Khan: task10
+[8:43 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+
+time = 0 : 1 : 19;
+freq = 1/20;
+sig = cos(2*pi*freq*time);
+ 
+stem(time, sig, 'm', 'filled');
+xlabel('time, t');
+ylabel('Amplitude, A');
+title('Continuous Time Cosine');
+ 
+dt = 1; %fragments of time.
+T=length(time); %intervals of time.
+power_sig = (sum(abs(sig).^2)*dt)/ T
+[8:43 am, 17/05/2024] Jamal Khan: lab9task1
+[8:43 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+time=0:0.001:5;
+fundamentalFrequency=0.5;
+y = (4/pi)*sin(2*pi*fundamentalFrequency*time);
+subplot(2, 7, 1);
+plot(time, y, 'g');
+xlabel('time, t');
+ylabel('Amplitude, A');
+i = 2;
+for k = 3:2:54;
+    harmonicFrequency=k*fundamentalFrequency;
+    x = (4/(k*pi))*sin(2*pi*harmonicFrequency*time); 
+    y=y+x;
+    
+    subplot(2, 7, i);
+    plot(time, y, 'm');
+    xlabel('time, t');
+    ylabel('Amplitude, A');
+    i= i +1;
+end
+subplot(2, 7, 14);
+plot(time, y, 'k');
+xlabel('time, t');
+ylabel('Amplitude, A');
+[8:43 am, 17/05/2024] Jamal Khan: lab9task2
+[8:43 am, 17/05/2024] Jamal Khan: clc;
+clear all;
+close all;
+
+time = 0 : 0.001 : 9;
+fundamentalFreq = 0.5;
+ 
+sig = ((4/pi)*sin(2*pi*fundamentalFreq*time))/time;
+ 
+for k = 1 : 2 : 9;
+    harmonicFreq = k * fundamentalFreq;
+    x = ((4/(k * pi))*sin(2*pi*harmonicFreq * time));
+    sig = sig + x;
+end
+ 
+plot(time, sig,'k', 'linewidth', 1.5);
+xlabel('time, t');
+ylabel('Amplitude, A');
+[8:43 am, 17/05/2024] Jamal Khan: lab9task3

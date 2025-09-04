@@ -1,0 +1,17 @@
+Probability
+
+Do this in python ...
+ 
+ASSIGNMENT 5
+Probability
+Conditional Probabilty
+Bayes Theorem
+Total Probability
+Binomial Probability law
+Bernoulli Probability law
+Geometry Probability law
+
+ASSIGNMENT 6
+Random Variable
+Expected Value
+Variance

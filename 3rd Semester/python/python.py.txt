@@ -1,0 +1,16 @@
+data type and variale:
+int: Integer values (e.g., 1, -5, 100).
+
+float: Floating-point or decimal values (e.g., 3.14, -0.5).
+
+str: String values, which are sequences of characters (e.g., "hello", 'Python').
+
+bool: Boolean values representing True or False.
+
+list: Ordered, mutable sequences of values (e.g., [1, 2, 3]).
+
+tuple: Ordered, immutable sequences of values (e.g., (1, 2, 3)).
+
+dict: Key-value pairs, also known as dictionaries (e.g., {'key': 'value'}).
+
+set: Unordered collections of unique values (e.g., {1, 2, 3})

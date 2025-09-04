@@ -1,0 +1,7 @@
+1  layer 
+cammand la
+A4 page lenght   297mm 
+wideth 210 mm
+
+
+2  sheet division

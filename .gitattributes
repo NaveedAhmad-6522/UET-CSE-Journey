@@ -2,3 +2,12 @@
 2nd[[:space:]]Semister/DE/De[[:space:]]Notes_1[[:space:]](1).pdf filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 4th[[:space:]]Semester/PME/sir-safdar's-lectures/*.mp4 filter=lfs diff=lfs merge=lfs -text
+1st[[:space:]]Semester/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+\# filter=lfs diff=lfs merge=lfs -text
+track filter=lfs diff=lfs merge=lfs -text
+videos filter=lfs diff=lfs merge=lfs -text
+1st[[:space:]]Semester/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+large filter=lfs diff=lfs merge=lfs -text
+PDFs filter=lfs diff=lfs merge=lfs -text
+if filter=lfs diff=lfs merge=lfs -text
+any filter=lfs diff=lfs merge=lfs -text

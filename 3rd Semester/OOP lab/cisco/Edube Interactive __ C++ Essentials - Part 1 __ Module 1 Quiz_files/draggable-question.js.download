@@ -1,0 +1,175 @@
+const dragstartHandler = event => {
+    event.dataTransfer.setData('text/html', event.currentTarget.outerHTML);
+    event.dataTransfer.setData('text/plain', event.currentTarget.dataset.id);
+
+    event.currentTarget.classList.add('dragging');
+};
+
+const dragendHandler = event => {
+    event.currentTarget.classList.remove('dragging');
+};
+
+const dragenterHandler = event => {
+    if (event.currentTarget.classList.contains('grid-cell')) {
+        if (event.currentTarget.classList.contains('active')) {
+            event.currentTarget.classList.add('drop');
+        }
+    } else {
+        event.currentTarget.classList.add('drop');
+    }
+};
+
+const dragleaveHandler = event => {
+    event.currentTarget.classList.remove('drop');
+};
+
+Array.from(document.querySelectorAll('.placeholder')).forEach(placeholder => {
+    placeholder.addEventListener('dragenter', dragenterHandler);
+    placeholder.addEventListener('dragleave', dragleaveHandler);
+});
+
+Array.from(document.querySelectorAll('.grid-cell')).forEach(gridCell => {
+    gridCell.addEventListener('dragenter', dragenterHandler);
+    gridCell.addEventListener('dragleave', dragleaveHandler);
+});
+
+const dropHandler = (event, context) => {
+    event.preventDefault();
+
+    const target = event.currentTarget;
+
+    if (!canBeDropped(target, context)) {
+        return;
+    }
+
+    document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
+
+    if (context === 'drag_and_drop') {
+        Array.from(document.querySelectorAll('.placeholder')).forEach(placeholder => placeholder.classList.remove('drop'));
+
+        target.innerHTML = target.innerHTML + event.dataTransfer.getData('text/html');
+
+        clearMetaTags(target);
+        dispatchDragAndDropUpdatedEvent();
+    } else if (context === 'code_grid_order') {
+        Array.from(document.querySelectorAll('.grid-cell')).forEach(gridCell => gridCell.classList.remove('drop'));
+
+        let div = document.createElement('div');
+        div.innerHTML = event.dataTransfer.getData('text/html');
+
+        let filledGridCell = div.lastChild;
+
+        if (target.classList.contains('grid-cell')) {
+            filledGridCell.classList.remove('draggable-option');
+            filledGridCell.classList.add('dropped-option');
+            filledGridCell.style.color = '#7b9a00';
+        } else {
+            filledGridCell.classList.remove('dropped-option');
+            filledGridCell.classList.add('draggable-option');
+            filledGridCell.style.color = '#fff';
+        }
+
+        target.appendChild(filledGridCell);
+
+        clearMetaTags(target);
+        dispatchCodeGridOrderUpdatedEvent();
+    }
+};
+
+const canBeDropped = (element, context) => {
+    if (context === 'drag_and_drop') {
+        const multiple = document.querySelector('.placeholders').dataset.multiple;
+
+        if ('true' === multiple) {
+            return true;
+        }
+
+        // It's only possible to put one option in one placeholder.
+        if (element.classList.contains('placeholder') && element.getElementsByClassName('draggable-option').length) {
+            return false;
+        }
+    } else if (context === 'code_grid_order') {
+        // It's only possible to put one option in one grid cell.
+        if (element.classList.contains('grid-cell')
+            && (!element.classList.contains('active') || element.getElementsByClassName('dropped-option').length)
+        ) {
+            return false;
+        }
+    }
+
+    return true;
+};
+
+const dragoverHandler = event => {
+    event.preventDefault();
+};
+
+/**
+ * Removes meta tags created when an item is dropped.
+ */
+const clearMetaTags = element => {
+    Array.from(element.getElementsByTagName('meta')).forEach(metaElement => {
+        element.removeChild(metaElement);
+    });
+};
+
+const dispatchDragAndDropUpdatedEvent = () => {
+    let options = [];
+
+    const placeholders = Array.from(document.querySelectorAll('.placeholder'));
+
+    placeholders.forEach(placeholder => {
+        const draggableOptions = Array.from(placeholder.querySelectorAll('.draggable-option'));
+
+        // If the placeholder has no option.
+        if (!draggableOptions.length) {
+            options.push(null);
+            return;
+        }
+
+        // If the placeholder has only one option.
+        if (draggableOptions.length === 1) {
+            options.push(parseInt(draggableOptions[0].dataset.id));
+            return;
+        }
+
+        // If the placeholder has several options.
+        let option = [];
+        draggableOptions.forEach(draggableOption => {
+            option.push(parseInt(draggableOption.dataset.id));
+        });
+
+        options.push(option);
+    });
+
+    document.dispatchEvent(new CustomEvent('DragAndDropUpdatedEvent', { detail: options }));
+};
+
+// document.addEventListener('DragAndDropUpdatedEvent', function (event) {
+//     console.log(event.detail);
+// });
+
+const dispatchCodeGridOrderUpdatedEvent = () => {
+    let options = {};
+
+    const gridCells = Array.from(document.querySelectorAll('.grid-cell'));
+
+    gridCells.forEach(gridCell => {
+        const droppedOption = gridCell.querySelector('.dropped-option');
+
+        // If the grid cell has no option.
+        if (!droppedOption) {
+            return;
+        }
+
+        // If the grid cell has only one option.
+        const idx = gridCell.dataset.row + ':' + gridCell.dataset.column;
+        options[idx] = parseInt(droppedOption.dataset.id);
+    });
+
+    document.dispatchEvent(new CustomEvent('CodeGridOrderUpdatedEvent', { detail: options }));
+};
+
+// document.addEventListener('CodeGridOrderUpdated', function (event) {
+//     console.log(event.detail);
+// });

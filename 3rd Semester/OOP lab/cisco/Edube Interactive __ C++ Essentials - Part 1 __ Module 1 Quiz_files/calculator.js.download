@@ -1,0 +1,96 @@
+const calculator = document.querySelector('.calculator');
+const keys = calculator.querySelector('.calculator__keys');
+const display = document.querySelector('.calculator__result');
+const clear = document.querySelector('.key--clear');
+
+keys.addEventListener('click', e => {
+    if (e.target.matches('button')) {
+        const key = e.target;
+        const action = key.dataset.action;
+        const keyContent = key.textContent;
+        const displayedNum = display.textContent;
+        const previousKeyType = calculator.dataset.previousKeyType;
+
+        Array.from(key.parentNode.children)
+            .forEach(k => k.classList.remove('is-depressed'));
+
+        if (!action) {
+            if (displayedNum === '0' || previousKeyType === 'operator') {
+                display.textContent = keyContent;
+            } else {
+                display.textContent = displayedNum + keyContent;
+            }
+
+            clear.textContent = 'C ';
+            calculator.dataset.previousKeyType = 'key';
+        }
+
+        if (action === 'decimal' && previousKeyType !== 'decimal' && displayedNum.indexOf('.') === -1) {
+            display.textContent = displayedNum + '.';
+            calculator.dataset.previousKeyType = 'decimal';
+        }
+
+        if (action === 'clear') {
+            display.textContent = '0';
+            clear.textContent = 'AC';
+            calculator.dataset.operator = 'undefined';
+            calculator.dataset.previousKeyType = 'undefined';
+        }
+
+        if (
+            action === 'add' ||
+            action === 'subtract' ||
+            action === 'multiply' ||
+            action === 'divide'
+        ) {
+            key.classList.add('is-depressed')
+            calculator.dataset.previousKeyType = 'operator';
+
+            calculator.dataset.firstValue = displayedNum;
+            calculator.dataset.operator = action;
+        }
+
+        if (action === 'calculate') {
+            const firstValue = calculator.dataset.firstValue;
+            const operator = calculator.dataset.operator;
+
+            display.textContent = calculate(firstValue, operator, displayedNum);
+        }
+    }
+})
+
+const calculate = (n1, operator, n2) => {
+    if (typeof operator === 'undefined' || operator === 'undefined') {
+        return n2;
+    }
+
+    const smallest = String(n1 < n2 ? n1 : n2);
+    const factor = smallest.length - smallest.indexOf('.');
+
+    for (let i = 0; i < factor; i++) {
+        n2 *= 10;
+        n1 *= 10;
+    }
+
+    n1 = Math.round(n1);
+    n2 = Math.round(n2);
+    const m = 10 ** factor;
+
+    let result = '';
+
+    if (operator === 'add') {
+        result = (n1 + n2) / m;
+    } else if (operator === 'subtract') {
+        result = (n1 - n2) / m;
+    } else if (operator === 'multiply') {
+        result = (n1 * n2) / (m ** 2);
+    } else if (operator === 'divide') {
+        result = n1 / n2;
+    }
+
+    if (!result || result.length === 0) {
+        result = 0;
+    }
+
+    return result;
+}

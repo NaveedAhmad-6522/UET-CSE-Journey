@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: #ffffff; /* FIXED: Removed the blue */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-top: none;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d6cdf;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #1a1a1a;  /* darker and visible */
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .nav-link {
+    color: #1a1a1a !important;
+  }
+ 
+.nav-link:hover {
+  background-color: #f0f0f0;
+  color: #2d6cdf;
+}
+
+.nav-link.active {
+  color: #2d6cdf;
+  font-weight: 600;
+  background-color: #e8f0fe;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+
+
+
+.navbar {
+    background-color: #fff !important;
+    background: #fff !important;
+    border-top: none !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  }
+
+ 

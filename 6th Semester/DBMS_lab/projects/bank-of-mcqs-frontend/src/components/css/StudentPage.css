@@ -1,0 +1,353 @@
+/* StudentsPage.css */
+
+.students-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    font-family: 'Inter', sans-serif;
+    color: #222;
+  }
+  
+  .students-container h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1a1a1a;
+  }
+  
+  .student-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .student-form input,
+.student-form select {
+  padding: 8px 10px;
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  appearance: none; /* For consistent dropdown styles */
+}
+  
+  .student-form input:focus,
+  .student-form select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    background-color: #fff;
+  }
+  
+  .student-form button {
+    grid-column: 1 / -1;
+    padding: 0.9rem 1rem;
+    background-color: #2d6cdf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .student-form button:hover {
+    background-color: #1d56b3;
+  }
+  
+  /* Student List */
+  .student-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fefefe;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .student-item:hover {
+    border-color: #d0d0d0;
+    background-color: #f9f9f9;
+  }
+  
+  .student-details {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .student-actions {
+    display: flex;
+    gap: 0.6rem;
+  }
+  
+  .student-actions button {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.88rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .edit-btn {
+    background-color: #f0ad4e;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e89c2e;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+
+  .student-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  
+  .student-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 4px solid #3498db;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .student-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .student-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.4rem;
+    column-gap: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .student-info-grid div {
+    color: #333;
+  }
+  
+  .student-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .edit-btn {
+    background-color: #f0ad4e;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #ec971f;
+  }
+  
+  .delete-btn {
+    background-color: #d9534f;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c9302c;
+  }
+
+
+  .students-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .student-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .student-form input,
+  .student-form select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .student-form button {
+    grid-column: span 2;
+    padding: 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .student-form button:hover {
+    background-color: #004999;
+  }
+  
+  .filter-export-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .filter-export-bar select {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .export-btn {
+    padding: 8px 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .export-btn:hover {
+    background-color: #1f7a32;
+  }
+  
+  .student-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .student-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s;
+  }
+  
+  .student-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  
+  .student-actions {
+    text-align: right;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #bd2130;
+  }
+
+
+  .student-form select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='10'%20height='7'%3E%3Cpath%20fill='none'%20stroke='%23666'%20stroke-width='1.5'%20d='M1%201l4%204%204-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 7px;
+  }
+
+
+  .student-form input,
+  .student-form select {
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    line-height: 1.2;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    appearance: none;
+    vertical-align: middle;
+  }
+
+  

@@ -1,0 +1,63 @@
+#include <msp430.h>
+const char digit[10] = {
+    0xFC, // 0
+    0x60, // 1
+    0xDB, // 2
+    0xF3, // 3
+    0x67, // 4
+    0xB7, // 5
+    0xBF, // 6
+    0xE4, // 7
+    0xFF, // 8
+    0xF7  // 9
+};
+
+#define pos1 4
+#define pos2 6
+#define pos3 8
+#define pos4 10
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD; // Stop watchdog timer
+    P4SEL0 |= BIT1 | BIT2; // XT1 input pins
+    do {
+        CSCTL7 &= ~(XT1OFFG | DCOFFG); // Clear XT1 and DCO fault flags
+        SFRIFG1 &= ~OFIFG;
+    } while (SFRIFG1 & OFIFG); // Loop until XT1 is stable
+    CSCTL6 = (CSCTL6 & ~XT1DRIVE_3) | XT1DRIVE_2; // XT1 drive strength
+
+    PM5CTL0 &= ~LOCKLPM5; // Unlock GPIO pins from high-impedance mode
+
+    // LCD pin setup (enable pins as LCD functions)
+    SYSCFG2 |= LCDPCTL0 | LCDPCTL1 | LCDPCTL2;
+    LCDPCTL0 = 0xFFFF; // Segments 0-15
+    LCDPCTL1 = 0x07FF; // Segments 16-26
+    LCDPCTL2 = 0x00F0; // Segments 27-31
+
+    // LCD controller setup
+    LCDCTL0 = LCDSSEL_0 | LCDDIV_7; // ACLK, /8 divider
+    LCDVCTL = LCDCPEN | LCDREFEN | VLCD_6 | LCDCPFSEL0 | LCDCPFSEL1 | LCDCPFSEL2 | LCDCPFSEL3; // Voltage level
+
+    LCDMEMCTL |= LCDCLRM; // Clear LCD memory
+
+    LCDCSSEL0 = 0x000F; // Set up COM0–COM3
+    LCDCSSEL1 = 0x0000;
+    LCDCSSEL2 = 0x0000;
+
+    LCDM0 = 0x21; // Standard initialization (keep for now)
+    LCDM1 = 0x84;
+
+    // Display the digits "2", "1", "1", "7"
+    LCDMEM[pos1] = digit[2]; // '2'
+    LCDMEM[pos2] = digit[1]; // '1'
+    LCDMEM[pos3] = digit[1]; // '1'
+    LCDMEM[pos4] = digit[7]; // '7'
+
+    LCDCTL0 |= LCD4MUX | LCDON; // 4-mux mode, turn on LCD
+
+    __bis_SR_register(LPM3_bits | GIE); // Low power mode + interrupts enabled
+    __no_operation();
+
+    return 0;
+}

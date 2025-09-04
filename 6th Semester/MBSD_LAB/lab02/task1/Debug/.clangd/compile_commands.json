@@ -1,0 +1,7 @@
+[
+   {
+      "directory" : "/Users/naveedahmad/Desktop/STUFF/Engineering_Studies/6th Semester /MBSD_LAB/lab02/task1/Debug",
+      "command"   : "clang++ -I\"/Applications/ti/ccs2002/ccs/ccs_base/msp430/include\" -I\"/Users/naveedahmad/Desktop/STUFF/Engineering_Studies/6th Semester /MBSD_LAB/lab02/task1\" -I\"/Applications/ti/ccs2002/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include\" -D__MSP430FR4133__",
+      "file"      : "/Users/naveedahmad/Desktop/STUFF/Engineering_Studies/6th Semester /MBSD_LAB/lab02/task1/main.c"
+   }
+]

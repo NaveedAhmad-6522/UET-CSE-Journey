@@ -1,0 +1,263 @@
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 10: error #20: identifier "LOCKLPMS" is undefined
+"../main.c", line 14: error #29: expected an expression
+"../main.c", line 14: error #20: identifier "i" is undefined
+"../main.c", line 18: warning #112-D: statement is unreachable
+"../main.c", line 14: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+3 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 10: error #20: identifier "LOCKLPMS" is undefined
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../main.c"
+ 
+Building target: "task1.out"
+Invoking: MSP430 Linker
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"task1.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="task1_linkInfo.xml" --use_hw_mpy=none --rom_model -o "task1.out" "./main.obj" "../lnk_msp430fr4133.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "task1.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 16: error #128: expected a statement
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 16: error #128: expected a statement
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 16: error #128: expected a statement
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task2 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task2" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 16: error #128: expected a statement
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task2 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task2" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main.obj' failed
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 16: error #128: expected a statement
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task2 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task2" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../main.c"
+ 
+Building target: "task2.out"
+Invoking: MSP430 Linker
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"task2.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="task2_linkInfo.xml" --use_hw_mpy=none --rom_model -o "task2.out" "./main.obj" "../lnk_msp430fr4133.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "task2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task1" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../main.c"
+ 
+Building target: "task1.out"
+Invoking: MSP430 Linker
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"task1.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="task1_linkInfo.xml" --use_hw_mpy=none --rom_model -o "task1.out" "./main.obj" "../lnk_msp430fr4133.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "task1.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task1 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+gmake[1]: 'task1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project task4 ****
+
+/Applications/ti/ccs1281/ccs/utils/bin/gmake -k -j 3 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --include_path="/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" --include_path="/Users/mycomputer/Desktop/css/task4" --include_path="/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 15: warning #70-D: integer conversion resulted in truncation
+"../main.c", line 19: warning #112-D: statement is unreachable
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 15: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../main.c"
+ 
+Building target: "task4.out"
+Invoking: MSP430 Linker
+"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --use_hw_mpy=none --advice:power=all --advice:hw_config=all --define=__MSP430FR4133__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"task4.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/Applications/ti/ccs1281/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="task4_linkInfo.xml" --use_hw_mpy=none --rom_model -o "task4.out" "./main.obj" "../lnk_msp430fr4133.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "task4.out"
+ 
+
+**** Build Finished ****

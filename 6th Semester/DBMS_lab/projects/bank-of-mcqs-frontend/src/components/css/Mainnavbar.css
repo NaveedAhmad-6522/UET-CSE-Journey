@@ -1,0 +1,14 @@
+/* Reset any top border or focus outline */
+.navbar {
+    border-top: none !important;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Remove focus outlines on links (optional, be cautious for accessibility) */
+  .navbar .nav-link:focus,
+  .navbar .nav-link:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }

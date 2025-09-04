@@ -1,0 +1,19 @@
+#include <msp430.h>
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;       // Unlock GPIO
+
+    P1DIR |= 0xFF;  // Set all P1 pins as output
+    unsigned char pattern = 0x01;  
+    while (1)
+    {
+        P1OUT = pattern;  // Display pattern
+        __delay_cycles(100000);
+
+        if (pattern == 0x80)  // If last bit is set, reset to first bit
+            pattern = 0x01;
+        else
+            pattern <<= 1;  // Shift left to move to the next LED
+    }
+}

@@ -1,0 +1,15 @@
+#include <msp430.h>
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;       // Unlock GPIO
+
+    P1DIR |= BIT0;  \
+
+    while (1)
+    {
+        P1OUT ^= BIT0;   // Toggle P1.0
+        __delay_cycles(100000);  
+    }
+}

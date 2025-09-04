@@ -15,3 +15,7 @@ any filter=lfs diff=lfs merge=lfs -text
 5th[[:space:]]Semister/**/*.pdf filter=lfs diff=lfs merge=lfs -text
 5th[[:space:]]Semester/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 5th[[:space:]]Semester/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+6th[[:space:]]Semester/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+6th[[:space:]]Semester/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+6th[[:space:]]Semester/DCN_LAB/project.zip filter=lfs diff=lfs merge=lfs -text
+6th[[:space:]]Semester/DBMS_lab/projects/Archive.zip filter=lfs diff=lfs merge=lfs -text

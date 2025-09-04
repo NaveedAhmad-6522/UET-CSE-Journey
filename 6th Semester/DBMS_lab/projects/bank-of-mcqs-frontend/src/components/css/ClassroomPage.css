@@ -1,0 +1,290 @@
+/* ClassroomPage.css */
+
+.classroom-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 2rem 3rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  color: #2c3e50;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #34495e;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f7f9fc;
+  transition: border 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.classroom-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.classroom-form button {
+  grid-column: span 2;
+  padding: 14px;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  border: none;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.classroom-form button:hover {
+  transform: scale(1.02);
+  background: linear-gradient(to right, #2980b9, #2471a3);
+}
+
+.classroom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.classroom-item {
+  background-color: #f4f6f8;
+  border: 1px solid #dcdfe3;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: box-shadow 0.3s;
+}
+
+.classroom-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.classroom-info {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.classroom-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button.edit-btn {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.edit-btn:hover {
+  background-color: #e67e22;
+}
+
+button.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .classroom-form button {
+    grid-column: span 1;
+  }
+}
+
+
+/* Container */
+.courses-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd;
+}
+
+/* Title */
+.courses-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.course-form {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.course-form button {
+  background-color: #1e88e5;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.course-form button:hover {
+  background-color: #1565c0;
+}
+
+/* Department Section */
+.department-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-left: 5px solid #1e88e5;
+  background: #f7faff;
+  border-radius: 8px;
+}
+
+.department-section h3 {
+  margin-bottom: 15px;
+  color: #1e88e5;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Course List */
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-item {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-info {
+  color: #2c3e50;
+  font-size: 0.98rem;
+}
+
+.course-actions button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.export-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.export-btn:hover {
+  background-color: #218838;
+}

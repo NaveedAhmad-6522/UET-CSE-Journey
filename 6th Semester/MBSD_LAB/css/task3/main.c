@@ -1,0 +1,20 @@
+#include <msp430.h> 
+
+
+/**
+ * main.c
+ */
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;  
+    PM5CTL0 &= ~LOCKLPM5;
+    P5DIR |= 0x01;
+    for(;;){
+        volatile unsigned int i;
+        P5OUT ^= 0x01;
+        for(i = 1000000; i > 0; i--)
+    }
+
+
+    return 0;
+}

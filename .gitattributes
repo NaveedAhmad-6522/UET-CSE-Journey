@@ -19,3 +19,14 @@ any filter=lfs diff=lfs merge=lfs -text
 6th[[:space:]]Semester/**/*.pdf filter=lfs diff=lfs merge=lfs -text
 6th[[:space:]]Semester/DCN_LAB/project.zip filter=lfs diff=lfs merge=lfs -text
 6th[[:space:]]Semester/DBMS_lab/projects/Archive.zip filter=lfs diff=lfs merge=lfs -text
+
+# Keep your semester files but REMOVE them from GitHub language stats
+
+*.rtf linguist-vendored
+*.docx linguist-vendored
+*.doc linguist-vendored
+*.pdf linguist-vendored
+*.txt linguist-vendored
+
+# Optional (only if you have Unity or similar)
+*.meta linguist-vendored

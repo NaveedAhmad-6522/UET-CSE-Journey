@@ -1,1 +1,10 @@
 .DS_Store
+# Unity
+**/Library/
+**/Logs/
+**/Temp/
+**/Obj/
+**/Build/
+**/Builds/
+**/MemoryCaptures/
+**/UserSettings/

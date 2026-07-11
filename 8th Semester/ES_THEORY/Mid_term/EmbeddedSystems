@@ -1,0 +1,126 @@
+Practice Problem 1 (Easy)
+
+👉 A switch is connected to PB1
+👉 An LED is connected to PB4
+
+Task:
+	•	If switch = pressed → LED ON
+	•	If switch = not pressed → LED OFF
+
+👉 Write AVR program
+
+SBI DDRB ,4
+CBI DDRB ,1
+SBI PORTB,1
+LOOP:
+     SBIS PINB,1 
+     JMP LED_ON
+     JMP LED_OFF
+LED_ON:
+        SBI PORTB,4
+        JMP LOOP
+LED_OFF:
+        CBI PORTB,4
+        JMP LOOP
+
+
+SBI DDRB,4
+CBI DDRB,1
+SBI PORTB,1
+
+LOOP:
+SBIS PINB,1
+RJMP LED_ON
+RJMP LED_OFF
+
+LED_ON:
+SBI PORTB,4
+RJMP LOOP
+
+LED_OFF:
+CBI PORTB,4
+RJMP LOOP
+
+Practice Problem 2 (Statement)
+
+👉 LEDs are connected to PORTC
+
+Task:
+	•	Turn ON all LEDs connected to PORTC
+	•	After a delay, turn OFF all LEDs
+	•	Repeat this process continuously (infinite loop)
+
+LDI R16,0xFF
+OUT DDRC,R16
+LOOP:
+OUT PORTC,R16
+RCALL DELAY
+LDI R16,0x00
+OUT PORTC,R16
+RCALL DELAY
+RJMP LOOP
+DELAY:
+LDI R17,0xFF
+DEC R17
+RET
+
+
+🔥 Practice Problem 3 (Statement)
+
+👉 A switch is connected to PB0
+👉 An LED is connected to PD2
+
+⸻
+
+🎯 Task
+	•	Continuously monitor the switch
+	•	When the switch is pressed → toggle the LED
+	•	Each press should change LED state:
+	ON → OFF → ON → OFF → ...
+
+
+
+
+
+SBI DDRD ,2
+CBI DDRB ,0
+SBI PORTB,0
+LDI,R16,0x00
+LOOP:
+SBIC,PINB,0
+RJMP PRESS
+RJMP LOOP
+PRESS:
+
+
+A switch is connected to pin PB0 and an LED to pin PB5. Write a program to get the status of SW and send it to the LED
+CBI DDRB,0
+SBI DDRB,5
+SBI PORTB,0 ;enable switch (PULL UP)
+LOOP
+SBIS PINB,0
+RCALL LED_ON
+RCALL LED_OFF
+
+LED_ON:
+SBI PORTB,5
+RET
+LED_OFF:
+CBI PORTB,5
+RET
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
